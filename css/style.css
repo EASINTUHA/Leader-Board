@@ -84,12 +84,29 @@ hr{
 /*---------------------
      courses style 
 ---------------------*/
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-column-gap: 24px;
+}
+.course{
+    box-shadow: 2px 2px 2px 1px rgba(126, 119, 119, 0.2);
+    border-radius: 5px;
+    width: 253px;
+    height: 253px;
+}
 .course .course-banner img{
     height: 104px;
     width: 224px;
 }
+.course-author{
+    color: #ED6B4F;
+    margin-bottom: 0px;
+}
 .course-info{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .fa-star{
     font-size: 12px;
@@ -100,4 +117,75 @@ hr{
 .fa-star.empty{
     color: #AEAEAE;
 }
+.four{
+    padding-left: 10px;
+}
+.course-duration{
+    color: #FF4A60;
+    background-color: #FFE4E8;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 
+
+/* --------------
+    media Queris 
+-------------- */
+
+/* Mobile devices */
+@media screen and (max-width:688px) {
+    body{
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+    .section-title{
+        padding-left: 10px;
+    }
+    .container{
+        width: 100%;
+        padding: 0px;
+        margin: 0 0px;
+    }
+    .players{
+        grid-template-columns: repeat(2 , 1fr);
+        padding-left: 10px; 
+    }
+    .section-title{
+        text-align: center;
+    }
+    .blogs , .courses{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+    .courses{
+        justify-items: center;
+    }
+    .course{
+        margin-bottom: 10px;
+    }
+    .blog{
+        flex-direction: column;
+        align-items: center;
+    }
+    .hide{
+        display: none;
+    }
+}
+/* tablet devices */
+@media screen and (min-width:687px) and (max-width:992px) {
+    .container{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .players , .courses{
+        grid-template-columns: repeat(2 , 1fr);
+        padding-left: 10px; 
+    }
+    .section-title{
+        text-align: center;
+    }
+    .courses{
+        justify-items: center;
+    }
+}
